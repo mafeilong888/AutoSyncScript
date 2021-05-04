@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Sunert-Script
+    types: sync-Sunert-Script-tree-master
 jobs:
   repo-sync:
     env:
@@ -22,7 +22,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/Sunert/Script.git"
+          source_repo: "https://github.com/Sunert/Script/tree/master.git"
           source_branch: "master"
           destination_branch: "Sunert"
           github_token: ${{ secrets.PAT }
